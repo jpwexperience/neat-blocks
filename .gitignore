@@ -1,0 +1,10 @@
+# Packages & generated assets
+build
+dist
+node_modules
+
+# System files, cache, logs, editor files, etc.
+.DS_Store
+.sass-cache
+*.vscode
+*.swp
