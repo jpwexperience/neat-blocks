@@ -5,3 +5,4 @@
  */
 
 import './blocks/blah/index';
+import './blocks/post-feed/index';

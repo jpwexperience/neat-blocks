@@ -46,3 +46,4 @@ add_action('init', function(){
 
 // Load dynamic block files
 include __DIR__ . '/src/blocks/blah/blah.php';
+include __DIR__ . '/src/blocks/post-feed/dynamic.php';
