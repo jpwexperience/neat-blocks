@@ -1,0 +1,69 @@
+{
+    "name": "neat/full-bleed-banner",
+    "title": "Full Bleed Banner",
+    "description": "A full bleed image banner",
+    "category": "common",
+    "icon": "button",
+    "keywords": [],
+    "attributes": {
+        "blockClass": {
+            "type": "string"
+        },
+        "imageThumb": {
+            "type": "string"
+        },
+        "imageFull": {
+            "type": "string"
+        },
+        "imageAlt": {
+            "type": "string"
+        },
+        "bannerSize": {
+            "type": "string",
+            "default": ""
+        },
+        "captionToggle": {
+            "type": "boolean",
+            "default": false
+        },
+        "captionCopy": {
+            "type": "string"
+        },
+        "captionIcon": {
+            "type": "string"
+        },
+        "hasOverlay": {
+            "type": "boolean",
+            "default": false
+        },
+        "isGrayscale": {
+            "type": "boolean",
+            "default": false
+        },
+        "overlayColor": {
+            "type": "string"
+        },
+        "isParallax": {
+            "type": "boolean",
+            "default": false
+        },
+        "isImageContain": {
+            "type": "boolean",
+            "default": false
+        },
+        "borderColor": {
+            "type": "string"
+        },
+        "toggleMobileCaption": {
+            "type": "boolean",
+            "default": false
+        },
+        "mobileCaptionCopy": {
+            "type": "string"
+        },
+        "isLazyLoad": {
+            "type": "boolean",
+            "default": false
+        }
+    }
+}

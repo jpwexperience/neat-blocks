@@ -9,6 +9,9 @@
 
 if ( !defined( 'ABSPATH' ) ) exit;
 
+// Load dynamic block files
+include __DIR__ . '/src/blocks/video-fade/dynamic.php';
+
 // Register Block Category
 function neat_block_category( $categories, $post ) {
 	return array_merge(
@@ -46,4 +49,3 @@ add_action('init', function(){
 
 // Load dynamic block files
 include __DIR__ . '/src/blocks/blah/blah.php';
-include __DIR__ . '/src/blocks/post-feed/dynamic.php';

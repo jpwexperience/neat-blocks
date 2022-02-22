@@ -1,0 +1,74 @@
+$wpPrefix: '.wp-block-neat-';
+$blockName: $wpPrefix + 'video-fade';
+
+.block-editor{
+    #{$blockName} {
+        padding: 1rem;
+        .title {
+            font-weight: 700;
+            font-size: 1.25rem;
+        } // .title
+
+        .remove-btn {
+            color: red;
+            border-color: red;
+        }
+
+        .slide-btn {
+            margin-right: 0.5rem;
+        } // .slide-btn
+
+        .info {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        } // .info
+
+        [class^="slider-"] {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+        } // [class^="slider-"]
+
+        .cell {
+            width: 10rem;
+            margin-bottom: 1.5rem;
+            margin-right: 0.75rem;
+
+            & > video {
+                margin-bottom: 0.5rem;
+            } // & > img
+
+            .left {
+                margin-right: 0.25rem;
+            }
+        } // .cell
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            & > div {
+                width: 2.5rem;
+                display: flex;
+                align-self: center;
+                
+                &.left {
+                    margin-right: 0.25rem;
+                } // &.left
+
+                &.right {
+                    margin-right: 0.5rem;
+                } // &.right
+                
+                img {
+                    width: 100%;
+                } // img
+
+            } // & > div
+
+        }
+    }
+}

@@ -1,0 +1,96 @@
+@import '../block-style/edit';
+
+$wpPrefix: '.wp-block-neat-';
+$blockName: $wpPrefix + 'full-bleed-banner';
+
+$overlay-color: var(--overlay-color);
+$border-color: var(--border-color);
+
+.block-editor{
+    #{$blockName} {
+        padding: 1rem;
+        position: relative;
+        height: 15rem;
+        
+        &.short {
+            height: 10rem;
+        } // &.short
+        
+        &.tall {
+            height: 20rem;
+        } // &.tall
+
+        &.hero {
+            height: 35rem;
+        } // &.hero
+
+        & > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        } // & > img
+
+        &.contain {
+            & > img {
+                object-fit: contain;
+            } // & > img
+        } // &.contain
+
+        &.overlay {
+            &::before {
+                content: "";
+                @include absolute-full;
+                background-color: $overlay-color;
+                opacity: 75%;
+                z-index: 2;
+            } // &::before
+
+            &.gray {
+                & > img {
+                    filter: grayscale(1);
+                } // & > img
+
+            } // &.gray
+
+        } // &.overlay
+
+        .caption {
+            position: relative;
+            padding-top: 1rem;
+            width: 100%;
+
+            .constraint {
+                text-align: center;
+                img {
+                    width: 20%;
+                    padding-left: 1rem;
+                } // img
+    
+                .copy,
+                .mobile-copy {
+                    text-align: center;
+                    color: $white;
+                    padding: 1rem;
+                    a {
+                        font-style: italic;
+                        font-size: 0.85rem;
+                    } // a
+    
+                } // .copy
+                
+            } // .constraint
+
+            .bar {
+                width: 100%;
+                background: $purple;
+                background: $border-color;
+                height: 0.5rem;
+                margin-top: 1rem;
+            } // .bar
+
+        } // .caption
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "neat/video-fade",
+    "title": "Video Fade",
+    "description": "Select videos, fade between them.",
+    "category": "common",
+    "icon": "format-gallery",
+    "keywords": [],
+    "attributes": {
+        "blockClass": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "slides": {
+            "type": "array",
+            "default": [],
+            "id": {
+                "type": "string",
+                "default": ""
+            },
+            "url": {
+                "type": "string",
+                "default": ""
+            }
+        }
+    }
+}

@@ -5,4 +5,5 @@
  */
 
 import './blocks/blah/index';
-import './blocks/post-feed/index';
+import './blocks/full-bleed-banner/index';
+import './blocks/video-fade/index';
