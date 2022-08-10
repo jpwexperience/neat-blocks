@@ -1,51 +1,34 @@
 <?php
 /**
  * Plugin Name: Neat Blocks
- * Description: Custom Neat Film Gutenberg Blocks
+ * Description: In-house gutenberg blocks
+ * Version: 0.1.0
  * Author: John Williams
- * Author URI: https://jpwexperience
- * Version: 0.0.0
+ * Author URI: https://jpwexperience.com
+ * Text Domain: neat_blocks
+ * 
+ * Requires at least: 5.8
+ * Requires PHP: 7.3
+ * @package Neat_blocks
+ * @link https://github.com/DevinVinson/WordPress-Plugin-Boilerplate
+ * @link https://github.com/woocommerce/woocommerce
  */
+defined( 'ABSPATH' ) || exit;
 
-if ( !defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'NEAT_BLOCKS_PLUGIN_FILE' ) ) define( 'NEAT_BLOCKS_PLUGIN_FILE', __FILE__ );
 
-// Load dynamic block files
-include __DIR__ . '/src/blocks/video-fade/dynamic.php';
-
-// Register Block Category
-function neat_block_category( $categories, $post ) {
-	return array_merge(
-		$categories,
-		array(
-			array(
-				'slug' => 'neat-blocks',
-				'title' => __( 'Neat Blocks', 'neat-blocks' ),
-			),
-		)
-	);
+// Include main class
+if ( !class_exists('Neat_Blocks', false) ) {
+	include_once dirname(NEAT_BLOCKS_PLUGIN_FILE) . '/includes/class-neat-blocks.php';
 }
-add_filter( 'block_categories', 'neat_block_category', 10, 2);
 
-// Register block types
-add_action('init', function(){
-
-	// Prepare file paths
-	$dist = 'build';
-	$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php' );
-
-	// Register assets
-	wp_register_style('neat-blocks', plugins_url("$dist/index.css", __FILE__), null, $asset_file['version']);
-	wp_register_script('neat-blocks-editor', plugins_url("$dist/index.js", __FILE__), $asset_file['dependencies'], $asset_file['version']);
-	wp_register_style('neat-blocks-editor', plugins_url("$dist/index.css", __FILE__), ['wp-edit-blocks'], $asset_file['version']);
-
-	// Register custom blocks
-	// I guess you need something to kick it all off 
-	register_block_type('neat/anything', [
-		'style' => 'neat-blocks',
-		'editor_script' => 'neat-blocks-editor',
-	]);
-
-});
-
-// Load dynamic block files
-include __DIR__ . '/src/blocks/blah/blah.php';
+/**
+ * Returns the main instance of Neat_Blocks
+ *
+ * @since  0.1.0
+ * @return Neat_Blocks
+ */
+function Neat_Blocks() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+	return Neat_Blocks::instance();
+}
+Neat_Blocks();
