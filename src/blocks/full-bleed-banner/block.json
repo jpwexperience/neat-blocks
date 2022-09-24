@@ -2,7 +2,7 @@
     "name": "neat/full-bleed-banner",
     "title": "Full Bleed Banner",
     "description": "A full bleed image banner",
-    "category": "common",
+    "category": "neat-blocks",
     "icon": "button",
     "keywords": [],
     "attributes": {

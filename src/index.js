@@ -6,3 +6,4 @@
 
 import './blocks/full-bleed-banner/index';
 import './blocks/video-fade/index';
+import './blocks/post-feed/index';

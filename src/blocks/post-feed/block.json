@@ -2,8 +2,8 @@
     "name": "neat/post-feed",
     "title": "Post Feed",
     "description": "Display different types of post types",
-    "category": "common",
-    "icon": "welcome-write-blog",
+    "category": "neat-blocks",
+    "icon": "text",
     "keywords": [],
     "attributes": {
         "blockClass": {
