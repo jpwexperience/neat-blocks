@@ -1,0 +1,9 @@
+$wpPrefix: '.wp-block-neat-';
+$blockName: $wpPrefix + 'latest-post-slider';
+
+.block-editor {
+    #{$blockName} {
+        background: lightpink;
+        text-align: center;
+    } // $blockName
+} // .block-editor

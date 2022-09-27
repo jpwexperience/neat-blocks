@@ -26,6 +26,7 @@ class Neat_Blocks_Init {
     public function include() {
         include NEAT_BLOCKS_ABSPATH . '/src/blocks/video-fade/dynamic.php';
         include NEAT_BLOCKS_ABSPATH . '/src/blocks/post-feed/dynamic.php';
+        include NEAT_BLOCKS_ABSPATH . '/src/blocks/latest-post-slider/dynamic.php';
     }
     
     /**

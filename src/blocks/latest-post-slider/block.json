@@ -1,0 +1,13 @@
+{
+    "name": "neat/latest-post-slider",
+    "title": "Latest Post Slider",
+    "description": "Slider showcasing the latest posts",
+    "category": "neat",
+    "icon": "images-alt",
+    "keywords": [],
+    "attributes": {
+        "blockClass": {
+            "type": "string"
+        }
+    }
+}
