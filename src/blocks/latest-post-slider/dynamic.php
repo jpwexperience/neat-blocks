@@ -57,6 +57,8 @@ function render_dynamic_block($attributes) {
     ?>
     <div class="<?= $block_class ?>">
         <div class="neat-slider">
+            <button class="neat-slider__nav button backward"><span class="sr-only">previous slide</span></button>
+            <button class="neat-slider__nav button forward"><span class="sr-only">next slide</span></button>
             <?php 
             $count = 0;
             foreach( $posts as $p ): 
@@ -64,6 +66,7 @@ function render_dynamic_block($attributes) {
                 $featured_id    = get_post_thumbnail_id( $p );
                 $featured_url   = wp_get_attachment_url( $featured_id );
                 $featured_alt   = get_post_meta( $featured_id, '_wp_attachment_image_alt', true );
+                $excerpt        = get_the_excerpt( $p );
             ?>
                 <div class="neat-slider__slide <?= $count === 0 ? 'is-current' : '' ?>">
                     <div class="neat-slider__slide__image">
@@ -71,6 +74,9 @@ function render_dynamic_block($attributes) {
                     </div>
                     <div class="neat-slider__slide__content">
                         <h2 class="neat-slider__slide__content__title"><?= $title ?></h2>
+                        <div class="neat-slider__slide__content__excerpt">
+                            <?= $excerpt ?>
+                        </div>
                     </div>
                 </div>
             <?php 
@@ -78,8 +84,6 @@ function render_dynamic_block($attributes) {
             endforeach; 
             ?>
         </div>
-        <button class="neat-slider__nav button backward">Backward</button>
-        <button class="neat-slider__nav button forward">Forward</button>
     </div>
     <?php
     return ob_get_clean();
