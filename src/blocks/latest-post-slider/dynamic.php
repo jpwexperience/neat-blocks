@@ -67,24 +67,16 @@ function render_dynamic_block($attributes) {
                 $featured_id    = get_post_thumbnail_id( $p );
                 $featured_url   = wp_get_attachment_url( $featured_id );
                 $featured_alt   = get_post_meta( $featured_id, '_wp_attachment_image_alt', true );
-                $has_excerpt    = has_excerpt( $p );
-                if( $has_excerpt ) {
-                    $excerpt    = get_the_excerpt( $p );
-                } else {
-                    $excerpt    = apply_filters( 'the_content', get_post_field('post_content', $p) );
-                    $excerpt    = wp_trim_words( $excerpt, 20, '' );
-                }
             ?>
                 <div class="neat-slider__slide <?= $count === 0 ? 'is-current' : '' ?>">
                     <div class="neat-slider__slide__image">
                         <img class="neat-slider__slide__image__src" src="<?= $featured_url ?>" alt="<?= $featured_alt ?>" />
                     </div>
-                    <div class="neat-slider__slide__content">
-                        <h2 class="neat-slider__slide__content__title"><?= $title ?></h2>
-                        <div class="neat-slider__slide__content__excerpt">
-                            <?= $excerpt ?><a class="neat-slider__slide__content__excerpt__read-more" href="<?= $permalink ?>">...Read More</a>
+                    <a href="<?= $permalink ?>">
+                        <div class="neat-slider__slide__content">
+                            <h2 class="neat-slider__slide__content__title"><?= $title ?></h2>
                         </div>
-                    </div>
+                    </a>
                 </div>
             <?php 
                 $count++;
