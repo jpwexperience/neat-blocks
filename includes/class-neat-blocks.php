@@ -139,6 +139,7 @@ final class Neat_Blocks {
 	 * Include required core files used in admin and on the frontend.
 	 */
 	public function includes() {
+		include_once NEAT_BLOCKS_ABSPATH . 'includes/neat-blocks-core-functions.php';
 		include_once NEAT_BLOCKS_ABSPATH . 'includes/class-neat-blocks-init.php';
 		
 		if ( $this->is_request( 'frontend' ) ) {

@@ -63,10 +63,17 @@ function render_dynamic_block($attributes) {
             $count = 0;
             foreach( $posts as $p ): 
                 $title          = get_the_title( $p );
+                $permalink      = get_the_permalink( $p );
                 $featured_id    = get_post_thumbnail_id( $p );
                 $featured_url   = wp_get_attachment_url( $featured_id );
                 $featured_alt   = get_post_meta( $featured_id, '_wp_attachment_image_alt', true );
-                $excerpt        = get_the_excerpt( $p );
+                $has_excerpt    = has_excerpt( $p );
+                if( $has_excerpt ) {
+                    $excerpt    = get_the_excerpt( $p );
+                } else {
+                    $excerpt    = apply_filters( 'the_content', get_post_field('post_content', $p) );
+                    $excerpt    = wp_trim_words( $excerpt, 20, '' );
+                }
             ?>
                 <div class="neat-slider__slide <?= $count === 0 ? 'is-current' : '' ?>">
                     <div class="neat-slider__slide__image">
@@ -75,7 +82,7 @@ function render_dynamic_block($attributes) {
                     <div class="neat-slider__slide__content">
                         <h2 class="neat-slider__slide__content__title"><?= $title ?></h2>
                         <div class="neat-slider__slide__content__excerpt">
-                            <?= $excerpt ?>
+                            <?= $excerpt ?><a class="neat-slider__slide__content__excerpt__read-more" href="<?= $permalink ?>">...Read More</a>
                         </div>
                     </div>
                 </div>
@@ -84,6 +91,7 @@ function render_dynamic_block($attributes) {
             endforeach; 
             ?>
         </div>
+        <?= neat_get_post_blocks( [35, 37] ); ?>
     </div>
     <?php
     return ob_get_clean();
