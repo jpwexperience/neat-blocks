@@ -78,7 +78,8 @@ function render_dynamic_block($attributes) {
             endforeach; 
             ?>
         </div>
-        <button class="dev-button button">DEV BUTTON</button>
+        <button class="neat-slider__nav button backward">Backward</button>
+        <button class="neat-slider__nav button forward">Forward</button>
     </div>
     <?php
     return ob_get_clean();
