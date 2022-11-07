@@ -1,9 +1,9 @@
 {
-    "name": "neat/post-feed",
-    "title": "Post Feed",
-    "description": "Display different types of post types",
+    "name": "neat/contact-form",
+    "title": "Contact Form",
+    "description": "Generic contact form",
     "category": "neat",
-    "icon": "text",
+    "icon": "forms",
     "keywords": [],
     "attributes": {
         "blockClass": {

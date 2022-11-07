@@ -2,7 +2,7 @@
     "name": "neat/video-fade",
     "title": "Video Fade",
     "description": "Select videos, fade between them.",
-    "category": "neat-blocks",
+    "category": "neat",
     "icon": "format-gallery",
     "keywords": [],
     "attributes": {
