@@ -1,0 +1,10 @@
+$wpPrefix: '.wp-block-neat-';
+$blockName: $wpPrefix + 'video-source';
+
+.block-editor{
+    #{$blockName} {
+        background: lightgreen;
+        padding: 1rem;
+        text-align: center;
+    }
+}

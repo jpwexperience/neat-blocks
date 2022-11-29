@@ -1,0 +1,13 @@
+{
+    "name": "neat/video-source",
+    "title": "Video Source",
+    "description": "Select videos, fade between them.",
+    "category": "neat",
+    "icon": "format-gallery",
+    "keywords": [],
+    "attributes": {
+        "blockClass": {
+            "type": "string"
+        }
+    }
+}

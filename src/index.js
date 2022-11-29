@@ -11,3 +11,4 @@ import './blocks/video-fade/index';
 import './blocks/post-feed/index';
 import './blocks/latest-post-slider/index';
 import './blocks/contact-form/index';
+import './blocks/video-source/index';
