@@ -12,6 +12,8 @@
  * @package Neat_blocks
  * @link https://github.com/DevinVinson/WordPress-Plugin-Boilerplate
  * @link https://github.com/woocommerce/woocommerce
+ * 
+ * This should get absorbed into neat-core
  */
 defined( 'ABSPATH' ) || exit;
 

@@ -5,10 +5,17 @@
  */
 
 import './utilities/pagination';
-
 import './blocks/full-bleed-banner/index';
 import './blocks/video-fade/index';
 import './blocks/post-feed/index';
 import './blocks/latest-post-slider/index';
 import './blocks/contact-form/index';
-import './blocks/video-source/index';
+import './blocks/clip-source/index';
+    
+export const getDecodedCopy = (items) => {
+    let decodedItems = [];
+    if( items ) {
+        decodedItems = JSON.parse(items);
+    }
+    return {...decodedItems};
+}

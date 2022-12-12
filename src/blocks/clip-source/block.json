@@ -1,0 +1,13 @@
+{
+    "name": "neat/clip-source",
+    "title": "Clip Source",
+    "description": "Clip source",
+    "category": "neat",
+    "icon": "video",
+    "keywords": [],
+    "attributes": {
+        "blockClass": {
+            "type": "string"
+        }
+    }
+}
