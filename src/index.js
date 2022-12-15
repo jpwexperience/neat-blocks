@@ -11,6 +11,8 @@ import './blocks/post-feed/index';
 import './blocks/latest-post-slider/index';
 import './blocks/contact-form/index';
 import './blocks/clip-source/index';
+
+import './sidebar/clip';
     
 export const getDecodedCopy = (items) => {
     let decodedItems = [];

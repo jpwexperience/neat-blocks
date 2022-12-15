@@ -33,6 +33,8 @@ class Neat_Blocks_Meta {
             'show_in_rest' 	=> true,
             'single'       	=> true,
             'type'         	=> 'string',
+            // Might need object subtype here
+            'object_subtype'    => 'clip',
             'auth_callback'	=> function() {
                 return current_user_can( 'edit_posts' );
             }

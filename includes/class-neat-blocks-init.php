@@ -16,7 +16,7 @@ class Neat_Blocks_Init {
 	 */
 	public function __construct() {
 		$this->include();
-        add_action( 'init', [$this, 'init']);
+        add_action( 'init', [$this, 'init'], 99 );
 		add_action( 'block_categories_all', [$this, 'block_categories'], 10, 2 );
 	}
     

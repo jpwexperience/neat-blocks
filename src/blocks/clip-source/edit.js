@@ -68,6 +68,7 @@ const latestPostSliderEdit = ({attributes, setAttributes}) => {
                 _clip_data: clipData,
             },
         });
+		if( !clipData ) setClipData(JSON.stringify({}));
     }, [clipData]);
 	
 	useEffect(() => {
@@ -85,8 +86,6 @@ const latestPostSliderEdit = ({attributes, setAttributes}) => {
 		dataCopy[key]   = value;
 		setClipData( JSON.stringify(dataCopy) );	
 	}
-	
-	console.log(clipData);
 	
 	const inspectorControls = ( 
 		<InspectorControls>
