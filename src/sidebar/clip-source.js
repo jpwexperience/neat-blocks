@@ -30,6 +30,7 @@ const clipSourceSidebar = () => {
 		meta: select('core/editor').getEditedPostAttribute('meta') || {},
 	}));
 	
+    //const [clipData, setClipData] = useState(_clip_data ?? '');
     const [clipData, setClipData] = useState(_clip_data ?? '');
     const { editPost } = useDispatch('core/editor');
     
@@ -46,7 +47,6 @@ const clipSourceSidebar = () => {
     }
     
     useEffect(() => {
-        console.log(`Clip Data: ${clipData}`);
 		editPost({
 			meta: {
 				...meta,
@@ -59,10 +59,8 @@ const clipSourceSidebar = () => {
         <PanelBody title={'Mega.nz'}>
             <TextControl 
                 label="Clip ID"
-                //value={clipData && JSON.parse(clipData).megaId}
-                value={clipData}
-                //onChange={ (val) => setData('megaId', val) }
-                onChange={ (val) => setClipData(val) }
+                value={clipData && JSON.parse(clipData).megaId}
+                onChange={ (val) => setData('megaId', val) }
             />
         </PanelBody>
     </PluginSidebar>);
