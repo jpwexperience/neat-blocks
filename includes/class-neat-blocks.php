@@ -142,7 +142,6 @@ final class Neat_Blocks {
 		include_once NEAT_BLOCKS_ABSPATH . 'includes/neat-blocks-core-functions.php';
 		include_once NEAT_BLOCKS_ABSPATH . 'includes/class-neat-blocks-meta.php';
 		include_once NEAT_BLOCKS_ABSPATH . 'includes/class-neat-blocks-init.php';
-		include_once NEAT_BLOCKS_ABSPATH . 'includes/class-neat-blocks-meta.php';
 		
 		if ( $this->is_request( 'frontend' ) ) {
 			$this->frontend_includes();

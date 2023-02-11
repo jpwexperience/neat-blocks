@@ -29,13 +29,12 @@ class Neat_Blocks_Meta {
      * Register clip metadata
      */
     public function register_clip_meta() {
-        register_post_meta( 'post', '_clip_data', [
-            'show_in_rest' 	=> true,
-            'single'       	=> true,
-            'type'         	=> 'string',
-            // Might need object subtype here
+        register_meta( 'post', '_clip_data', [
+            'show_in_rest' 	    => true,
+            'single'       	    => true,
+            'type'         	    => 'string',
             'object_subtype'    => 'clip',
-            'auth_callback'	=> function() {
+            'auth_callback'	    => function() {
                 return current_user_can( 'edit_posts' );
             }
         ]);
