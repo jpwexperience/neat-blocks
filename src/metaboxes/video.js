@@ -48,10 +48,27 @@ const videoSourceMeta = () => {
 		});
 	}, [videoSource]);
 	
-	const onAddVideo = (val) => {
-		console.log(val);
+	/**
+     * Set data value
+     * 
+     * @param {string} key 
+     * @param {mixed} value 
+     */
+	const setData = (data) => {
+		const videoCopy  = getDecodedCopy( videoSource );
+		for( const key in data ) {
+			videoCopy[key]   = data[key];
+		}
+		setVideoSource( JSON.stringify(videoCopy) );
 	}
 	
+	const onAddVideo = (val) => {
+		setData({
+			url: val.url,
+			filename: val.filename,
+		});
+	}
+	   
     return (
 		<PluginDocumentSettingPanel name="video-source" title="Video Source">
 			<div className="components-panel__body is-opened">
@@ -65,6 +82,7 @@ const videoSourceMeta = () => {
 						);
 					}}
 				/>
+				{videoSource && <p>{JSON.parse(videoSource).filename}</p>}
 			</div>
 		</PluginDocumentSettingPanel>
 	);
