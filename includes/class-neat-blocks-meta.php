@@ -29,7 +29,7 @@ class Neat_Blocks_Meta {
      * Register clip metadata
      */
     public function register_clip_meta() {
-        register_meta( 'post', '_clip_data', [
+        register_meta( 'post', '_video_source', [
             'show_in_rest' 	    => true,
             'single'       	    => true,
             'type'         	    => 'string',

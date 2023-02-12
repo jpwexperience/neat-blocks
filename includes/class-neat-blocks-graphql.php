@@ -20,11 +20,11 @@ class Neat_Blocks_GraphQL {
     }
     
     public function clip_data() {
-        register_graphql_field( 'clip', 'clipData', [
+        register_graphql_field( 'clip', 'videoSource', [
 			'type'          => 'String',
 			'description'   => __( 'Clip data post meta', 'wp-graphql' ),
 			'resolve'       => function( $post ) {
-			    return get_post_meta( $post->ID, '_clip_data', true );
+			    return get_post_meta( $post->ID, '_video_source', true );
 			}
 		]);
     }

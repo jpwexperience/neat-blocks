@@ -14,5 +14,5 @@ import './blocks/post-feed/index';
 import './blocks/latest-post-slider/index';
 import './blocks/contact-form/index';
 
-// Sidebars
-import './sidebar/clip-source';
+// Metaboxes
+import './metaboxes/video';
