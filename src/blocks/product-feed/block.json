@@ -1,0 +1,13 @@
+{
+    "name": "neat/product-feed",
+    "title": "Product Feed",
+    "description": "Display products",
+    "category": "neat",
+    "icon": "products",
+    "keywords": [],
+    "attributes": {
+        "blockClass": {
+            "type": "string"
+        }
+    }
+}
