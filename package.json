@@ -19,7 +19,6 @@
 		"test:unit": "wp-scripts test-unit-js"
 	},
 	"author": "John Williams",
-	"license": "ISC",
 	"devDependencies": {
                 "@wordpress/block-library": "^7.11.0",
                 "@wordpress/scripts": "^23.6.0",
