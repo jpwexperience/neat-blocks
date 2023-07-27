@@ -1,0 +1,13 @@
+{
+    "name": "neat/product-slider",
+    "title": "Product Slider",
+    "description": "Display products",
+    "category": "neat",
+    "icon": "products",
+    "keywords": [],
+    "attributes": {
+        "blockClass": {
+            "type": "string"
+        }
+    }
+}

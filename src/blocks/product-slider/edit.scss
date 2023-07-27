@@ -1,0 +1,11 @@
+$wpPrefix: '.wp-block-neat-';
+$blockName: $wpPrefix + 'product-slider';
+
+.block-editor{
+    #{$blockName} {
+        text-align: center;
+        padding: 2rem;
+        background: purple;
+        color: white;
+    }
+}
