@@ -75,6 +75,14 @@ class Neat_Blocks_GraphQL {
             'post_type'         => 'product',
             'posts_per_page'    => $num_products,
             'fields'            => 'ids',
+            'tax_query' => [
+                [
+                    'taxonomy' => 'product_visibility',
+                    'field'    => 'name',
+                    'terms'    => ['outofstock'],
+                    'operator' => 'NOT IN'
+                ],
+            ],
         ]);
         $connected_products = [];
         foreach( $products as $product ) {
