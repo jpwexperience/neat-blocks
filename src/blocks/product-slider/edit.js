@@ -15,6 +15,11 @@ import {
 	InspectorControls, 
 } from '@wordpress/block-editor';
 
+import {
+	PanelBody,
+	TextControl,
+} from '@wordpress/components';
+
 /**
  * Internal dependencies
  */
@@ -41,11 +46,21 @@ class productFeedEdit extends Component {
 		} = this.props;
 
 		const {
-			blockClass
+			blockClass,
+			productIds,
 		} = attributes;
 
 		const inspectorControls = ( 
 			<InspectorControls>
+				<PanelBody title={'Products'}>
+					<TextControl 
+						label="Product IDs"
+						value={productIds}
+						help="Comma separated list of product IDs. If empty, first 10 will be displayed."
+						onChange={(val) => {setAttributes({productIds: val});}}
+					/>
+				</PanelBody>
+				
 			</InspectorControls>
 		);
 

@@ -59,7 +59,10 @@ class Neat_Blocks_GraphQL {
     public function resolve_connected_products( $block, $args, $context ) {
         $attributes     = $block->attributes;
         $num_products   = $attributes['numProducts'] ?? 10;
-        return $this->get_products( $num_products, $context );
+        $product_ids    = $attributes['productIds'] ?? '';
+        $product_ids    = preg_replace( '/\s+/', '', $product_ids );
+        $product_ids    = empty($product_ids) ? [] : explode(',', $product_ids);
+        return $this->get_products( $context, $num_products, $product_ids );
     }
 
     /**
@@ -69,9 +72,9 @@ class Neat_Blocks_GraphQL {
      * @param AppContext $context
      * @return Array
      */
-    public function get_products( $num_products, $context ) {
+    public function get_products( $context, $num_products = 10, $product_ids = [] ) {
        $connected_products  = [];
-        $products           = get_posts([
+        $args = [
             'post_type'         => 'product',
             'posts_per_page'    => $num_products,
             'fields'            => 'ids',
@@ -83,7 +86,12 @@ class Neat_Blocks_GraphQL {
                     'operator' => 'NOT IN'
                 ],
             ],
-        ]);
+        ];
+        if( !empty($product_ids) ) {
+            $args['post__in']   = $product_ids;
+            $args['orderby']    = 'post__in';
+        }
+        $products           = get_posts( $args );
         $connected_products = [];
         foreach( $products as $product ) {
             $connected_products[]   = Factory::resolve_crud_object( $product, $context );

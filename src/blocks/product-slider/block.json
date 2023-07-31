@@ -8,6 +8,9 @@
     "attributes": {
         "blockClass": {
             "type": "string"
+        },
+        "productIds": {
+            "type": "string"
         }
     }
 }
