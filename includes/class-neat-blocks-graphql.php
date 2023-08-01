@@ -6,6 +6,10 @@
  */
 
 use WPGraphQL\WooCommerce\Data\Factory;
+use WPGraphQL\WooCommerce\Connection\Products;
+use WPGraphQL\AppContext;
+use GraphQL\Type\Definition\ResolveInfo;
+use WPGraphQL\Data\Connection\PostObjectConnectionResolver;
 
 class Neat_Blocks_GraphQL {
     /**
@@ -34,17 +38,21 @@ class Neat_Blocks_GraphQL {
 			}
 		]);
 
-        /**
-         * Connect products to product feed block
-         */
-        register_graphql_field( 'NeatProductFeedBlock', 'products', [
-			'type'          => ['list_of' => 'Product'],
-			'description'   => __( 'Connected products', 'wp-graphql' ),
-			'resolve'       => [$this, 'resolve_connected_products'],
-		]);
+        register_graphql_connection(
+			Products::get_connection_config(
+				[
+					'fromType' => 'NeatProductFeedBlock',
+					'resolve'  => static function ( $source, array $args, AppContext $context, ResolveInfo $info ) {
+						$resolver = new PostObjectConnectionResolver( $source, $args, $context, $info, 'product' );
+						return $resolver->get_connection();
+					},
+				]
+			)
+		);
 
         /**
          * Connect products to product slider block
+         * Don't need pagination for the slider
          */
         register_graphql_field( 'NeatProductSliderBlock', 'products', [
 			'type'          => ['list_of' => 'Product'],
