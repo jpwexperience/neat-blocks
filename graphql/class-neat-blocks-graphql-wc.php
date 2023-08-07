@@ -4,6 +4,7 @@
  * 
  * Main for meta values
  */
+defined( 'ABSPATH' ) || exit;
 
 use WPGraphQL\WooCommerce\Data\Factory;
 use WPGraphQL\WooCommerce\Connection\Products;
@@ -11,7 +12,7 @@ use WPGraphQL\AppContext;
 use GraphQL\Type\Definition\ResolveInfo;
 use WPGraphQL\Data\Connection\PostObjectConnectionResolver;
 
-class Neat_Blocks_GraphQL {
+class Neat_Blocks_GraphQL_WC {
     /**
      * Kick things off
      */
@@ -30,14 +31,6 @@ class Neat_Blocks_GraphQL {
      * Custom graphql endpoints
      */
     public function register_types() {
-        register_graphql_field( 'clip', 'videoSource', [
-			'type'          => 'String',
-			'description'   => __( 'Clip data post meta', 'wp-graphql' ),
-			'resolve'       => function( $post ) {
-			    return get_post_meta( $post->ID, '_video_source', true );
-			}
-		]);
-
         register_graphql_connection(
 			Products::get_connection_config(
 				[
@@ -107,4 +100,4 @@ class Neat_Blocks_GraphQL {
         return $connected_products; 
     }
 }
-return new Neat_Blocks_GraphQL();
+return new Neat_Blocks_GraphQL_WC();
