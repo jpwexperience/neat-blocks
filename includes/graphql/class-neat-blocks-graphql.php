@@ -6,12 +6,6 @@
  */
 defined( 'ABSPATH' ) || exit;
 
-use WPGraphQL\WooCommerce\Data\Factory;
-use WPGraphQL\WooCommerce\Connection\Products;
-use WPGraphQL\AppContext;
-use GraphQL\Type\Definition\ResolveInfo;
-use WPGraphQL\Data\Connection\PostObjectConnectionResolver;
-
 class Neat_Blocks_GraphQL {
 	/**
 	 * Kick things off
@@ -25,17 +19,24 @@ class Neat_Blocks_GraphQL {
 	 * Import classes
 	 */
 	public function includes() {
-		// WooCommerce
-		if ( class_exists( 'WooCommerce' ) ) {
-			include __DIR__ . '/class-neat-blocks-graphql-wc.php';
-		}
 	}
 
 	/**
 	 * Hook methods
 	 */
 	public function init() {
+		add_action( 'plugins_loaded', [$this, 'plugin_integrations'] );
 		add_action( 'graphql_register_types', [$this, 'register_types'] );
+	}
+
+	/**
+	 * Import classes that depend on certain plugins
+	 */
+	public function plugin_integrations() {
+		// WooCommerce
+		if ( class_exists( 'WooCommerce' ) ) {
+			include __DIR__ . '/class-neat-blocks-graphql-wc.php';
+		}
 	}
 
 	/**
