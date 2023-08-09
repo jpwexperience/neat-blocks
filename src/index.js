@@ -15,6 +15,7 @@ import './blocks/latest-post-slider/index';
 import './blocks/contact-form/index';
 import './blocks/product-feed/index';
 import './blocks/product-slider/index';
+import './blocks/simple-icon/index';
 
 // Metaboxes
 import './metaboxes/video';

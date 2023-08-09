@@ -1,0 +1,19 @@
+{
+    "name": "neat/simple-icon",
+    "title": "Simple Icon",
+    "description": "Displays a nice icon",
+    "category": "common",
+    "icon": "editor-italic",
+    "keywords": [],
+    "attributes": {
+        "blockClass": {
+            "type": "string"
+        },
+        "icon": {
+            "type": "string"
+        },
+        "link": {
+            "type": "string"
+        }
+    }
+}

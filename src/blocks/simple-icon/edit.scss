@@ -1,0 +1,14 @@
+$wpPrefix: '.wp-block-neat-';
+$blockName: $wpPrefix + 'simple-icon';
+
+.block-editor{
+    #{$blockName} {
+        background: gray;
+        text-align: center;
+        .container {
+            width: 100%;
+            max-width: 20rem;
+            margin: auto;
+        } // .container
+    }
+}
