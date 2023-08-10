@@ -1,0 +1,11 @@
+$wpPrefix: '.wp-block-neat-';
+$blockName: $wpPrefix + 'image-scroll';
+
+.block-editor{
+    #{$blockName} {
+        text-align: center;
+        padding: 2rem;
+        background: darkgoldenrod;
+        color: white;
+    }
+}

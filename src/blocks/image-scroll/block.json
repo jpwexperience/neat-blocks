@@ -1,0 +1,22 @@
+{
+    "name": "neat/image-scroll",
+    "title": "Image Scroll",
+    "description": "Image that allows internal scrolling",
+    "category": "neat",
+    "icon": "image",
+    "keywords": [],
+    "attributes": {
+        "blockClass": {
+            "type": "string"
+        },
+        "imageThumb": {
+            "type": "string"
+        },
+        "imageFull": {
+            "type": "string"
+        },
+        "imageAlt": {
+            "type": "string"
+        }
+    }
+}

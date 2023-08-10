@@ -16,6 +16,7 @@ import './blocks/contact-form/index';
 import './blocks/product-feed/index';
 import './blocks/product-slider/index';
 import './blocks/simple-icon/index';
+import './blocks/image-scroll/index';
 
 // Metaboxes
 import './metaboxes/video';
