@@ -1,0 +1,11 @@
+$wpPrefix: '.wp-block-neat-';
+$blockName: $wpPrefix + 'image-text';
+
+.block-editor {
+    #{$blockName} {
+        text-align: center;
+        color: white;
+        background: purple;
+        padding: 0.5rem;
+    }
+} // .block-editor

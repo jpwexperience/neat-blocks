@@ -50,6 +50,21 @@ class Neat_Blocks_GraphQL {
 			    return get_post_meta( $post->ID, '_video_source', true );
 			}
 		]);
+
+
+		/**
+		 * Connect media item to block data
+		 */
+		register_graphql_field( 'NeatImageTextBlock', 'image', [
+			'type'          => 'MediaItem',
+			'description'   => __( 'Connected image', 'wp-graphql' ),
+			'resolve'       => function( $block, $args, $context ) {
+				$attributes     = $block->attributes;
+				$attachment_id  = $attributes['imageId'] ?? '';
+				return $context->get_loader( 'post' )->load_deferred( $attachment_id );
+				return 'ayy';
+			}
+		]);
 	}
 }
 return new Neat_Blocks_GraphQL();

@@ -1,0 +1,22 @@
+{
+	"name": "neat/image-text",
+	"title": "Image Text",
+	"description": "Image with text",
+	"category": "neat",
+	"icon": "thumbs-up",
+	"keywords": [],
+	"attributes": {
+		"blockClass": {
+			"type": "string"
+		},
+		"content": {
+			"type": "string"
+		},
+		"imageId": {
+			"type": "number"
+		},
+		"imageThumbnail": {
+			"type": "string"
+		}
+	}
+}
