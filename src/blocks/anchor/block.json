@@ -1,0 +1,16 @@
+{
+	"name": "neat/anchor",
+	"title": "Anchor",
+	"description": "Add an anchor to the page",
+	"category": "neat",
+	"icon": "thumbs-up",
+	"keywords": [],
+	"attributes": {
+		"blockClass": {
+			"type": "string"
+		},
+		"anchor": {
+			"type": "string"
+		}
+	}
+}
