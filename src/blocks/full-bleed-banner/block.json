@@ -64,6 +64,9 @@
         "isLazyLoad": {
             "type": "boolean",
             "default": false
+        },
+        "heading": {
+            "type": "string"
         }
     }
 }

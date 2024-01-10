@@ -23,6 +23,7 @@ import {
 	PanelBody,
 	RadioControl,
 	ToggleControl,
+	TextControl,
 } from '@wordpress/components';
 
 /**
@@ -83,6 +84,7 @@ class FullBleedBannerEdit extends Component {
 			toggleMobileCaption,
 			mobileCaptionCopy,
 			isLazyLoad,
+			heading,
 		} = attributes;
 
 		const modifyToggleBlockClass = (val, selector) => {
@@ -138,6 +140,14 @@ class FullBleedBannerEdit extends Component {
 
 		const inspectorControls = ( 
 			<InspectorControls>
+				<PanelBody title={__('Heading')}>
+					<TextControl
+						label="Heading"
+						value={heading}
+						onChange={ (val) => { setAttributes({heading: val}); }}
+					/>
+
+				</PanelBody>
 				<PanelBody title={__('Caption Options')}>
 					<ToggleControl
 						label="Caption"
