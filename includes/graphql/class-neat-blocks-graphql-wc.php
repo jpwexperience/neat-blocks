@@ -79,6 +79,8 @@ class Neat_Blocks_GraphQL_WC {
             'post_type'         => 'product',
             'posts_per_page'    => $num_products,
             'fields'            => 'ids',
+            /*
+            // All products are now sold out
             'tax_query' => [
                 [
                     'taxonomy' => 'product_visibility',
@@ -87,6 +89,7 @@ class Neat_Blocks_GraphQL_WC {
                     'operator' => 'NOT IN'
                 ],
             ],
+            */
         ];
         if( !empty($product_ids) ) {
             $args['post__in']   = $product_ids;
