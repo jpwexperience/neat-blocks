@@ -41,7 +41,7 @@ registerBlockType( name, {
 	category: category,
 	keywords: keywords,
     edit,
-    save,
+    save: () => {},
     attributes: {
         ...attributes
     }

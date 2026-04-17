@@ -28,6 +28,9 @@ class Neat_Blocks_Init {
         include NEAT_BLOCKS_ABSPATH . '/src/blocks/post-feed/dynamic.php';
         include NEAT_BLOCKS_ABSPATH . '/src/blocks/latest-post-slider/dynamic.php';
         include NEAT_BLOCKS_ABSPATH . '/src/blocks/contact-form/dynamic.php';
+        include NEAT_BLOCKS_ABSPATH . '/src/blocks/full-bleed-banner/dynamic.php';
+        include NEAT_BLOCKS_ABSPATH . '/src/blocks/simple-icon/dynamic.php';
+        include NEAT_BLOCKS_ABSPATH . '/src/blocks/image-scroll/dynamic.php';
     }
     
     /**
